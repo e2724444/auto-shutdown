@@ -18,7 +18,12 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'
-
+          
+      - name: Gradle 버전 고정
+        uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '8.9'
+          
       - name: Gradle 실행 권한 부여
         run: chmod +x gradlew
 
