@@ -19,19 +19,16 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Android SDK 설정
-        uses: android-actions/setup-android@v3
-
-      - name: Gradle Wrapper 생성
+      - name: Gradle 8.9 설정
         uses: gradle/actions/setup-gradle@v3
         with:
           gradle-version: '8.9'
 
-      - name: Wrapper 파일 생성
-        run: gradle wrapper --gradle-version 8.9
-
       - name: APK 빌드
-        run: ./gradlew assembleDebug --no-daemon
+        run: gradle assembleDebug
+        env:
+          ANDROID_HOME: /usr/local/lib/android/sdk
+          ANDROID_SDK_ROOT: /usr/local/lib/android/sdk
 
       - name: APK 업로드
         uses: actions/upload-artifact@v4
