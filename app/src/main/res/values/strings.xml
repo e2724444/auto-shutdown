@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">자동 전원 끄기</string>
+    <string name="accessibility_description">화면이 꺼진 후 설정한 시간이 지나면 전원을 자동으로 끕니다</string>
+</resources>
